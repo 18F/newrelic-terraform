@@ -10,19 +10,25 @@ To protect agaisnt committing credentials or other secrets:
 $ brew install pre-commit gitleaks sops
 ```
 
-To import existing New Relic accountxs into terraform:
-- [Terraform](https://www.terraform.io/downloads.html)
-- [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+Installation
+- Install [Terraform](https://www.terraform.io/downloads.html)
 
 ```bash
-$ brew install terraform terraformer
+$ brew install terraform
 ```
 
-Import an existing New Relic account into terraform:
+Apply main.tf file for basic synthetics monitoring and alerting setup:
 ```bash
 $ export NEWRELIC_API_KEY=REPLACEME
 $ terraform init
 $ terraform plan
+```
+
+To import existing New Relic account resources into terraform:
+- [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+
+```bash
+$ brew install terraformer
 ```
 
 While this is not used in production we have the ability to import existing new relic resource into terraform for cherry-picking content from for reference and/or if changes are made to the account and need to be exported:
