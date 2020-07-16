@@ -5,8 +5,6 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -21,7 +19,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      id: 
+      id: ../newrelic-terraform
       
     - name: Install Terraform
       uses: little-core-labs/install-terraform@v1.0.0
@@ -40,4 +38,4 @@ jobs:
         # Whether or not to comment on pull requests.
         tfsec_actions_comment: true # optional, default is true
         # Terraform working directory.
-        tfsec_actions_working_dir: ./newrelic # optional, default is .      
+        tfsec_actions_working_dir: . # optional, default is .      
