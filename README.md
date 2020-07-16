@@ -1,7 +1,7 @@
 # TTS New Relic Automation
 
 ## Getting Started
-To protect against committing credentials or other secrets:
+To protect agaisnt committing credentials or other secrets:
 - [Gitleaks](https://github.com/zricethezav/gitleaks#getting-started)
 - [Pre-commit](https://pre-commit.com/#install)
 - [Mozilla's Secrets OPerationS (SOPS)](https://github.com/mozilla/sops)
@@ -20,13 +20,21 @@ $ brew install terraform terraformer
 
 Import an existing New Relic account into terraform:
 ```bash
-$ export NEWRELIC_API_KEY=REPLACEMEterra
+$ export NEWRELIC_API_KEY=REPLACEME
 $ terraform init
-$ terraformer import newrelic -o "./newrelic" -r alert,dashboard,infra,synthetics
+$ terraform plan
 ```
-### Continuous Integration
-- [Github Actions - Gitleaks](https://github.com/marketplace/actions/gitleaks)
-- [CircleCI](https://circleci.com)
+
+While this is not used in production we have the ability to import existing new relic resource into terraform for cherry-picking content from for reference and/or if changes are made to the account and need to be exported:
+```bash
+$ export NEWRELIC_API_KEY=REPLACEME
+$ cd snapshot
+$ terraformer import newrelic -o "./snapshot" -r alert,dashboard,infra,synthetics
+```
+
+### Continuos Integration
+- [Github Actions - is used for terraform linting and security scanning agaisnt each PR](https://github.com/marketplace/actions/gitleaks)
+- [CircleCI - is used for production deployment when merged to master/main](https://circleci.com)
 
 
 ### Public domain
