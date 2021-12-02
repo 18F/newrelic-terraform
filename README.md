@@ -29,13 +29,11 @@ Format your Terraform code before pushing.
     $ terraform fmt
 
 
-### Update the list of sites
-
-_TODO [Provide a script](https://github.com/18F/newrelic-terraform/issues/23) to make the manual steps 1) download 2) run script._
+### Update the list of websites
 
 Follow these steps to update the `sites.csv`.
 
-1. Download the [GSA Website Inventory](https://docs.google.com/spreadsheets/d/1OBO6g7_OsVBv0vG8WSCI6L2FD_iRh3A7a_6eQWj2zLE/edit#gid=2013137748) as a CSV.
+1. Download the [GSA Website Inventory](https://touchpoints.app.cloud.gov/admin/websites) as a CSV.
 1. Filter the list Production Status != Decommissioned, Sub-Office starts with "TTS\*".
 1. Copy the first column (list of domains) into `sites.csv`.
 
